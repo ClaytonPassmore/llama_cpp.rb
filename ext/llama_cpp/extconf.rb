@@ -51,9 +51,9 @@ if with_config('metal')
 end
 
 if with_config('cublas')
-  $CFLAGS << ' -DGGML_USE_CUBLAS -I/usr/local/cuda/include'
-  $CXXFLAGS << ' -DGGML_USE_CUBLAS -I/usr/local/cuda/include'
-  $LDFLAGS << ' -lcublas -lculibos -lcudart -lcublasLt -lpthread -ldl -lrt -L/usr/local/cuda/lib64'
+  $CFLAGS << ' -DGGML_USE_CUBLAS -I/opt/cuda/include'
+  $CXXFLAGS << ' -DGGML_USE_CUBLAS -I/opt/cuda/include'
+  $LDFLAGS << ' -lcublas -lculibos -lcudart -lcublasLt -lpthread -ldl -lrt -L/opt/cuda/lib64'
   $objs = %w[ggml.o ggml-backend.o ggml-alloc.o ggml-quants.o ggml-cuda.o llama.o llama_cpp.o]
 end
 
